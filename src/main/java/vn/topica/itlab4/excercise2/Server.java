@@ -81,7 +81,8 @@ public class Server {
 						String phoneNumber = informationPackage.gettLVMap().get(Constant.PHONE_NUMBER).getValue();
 						// check phone match
 						if (checkPhoneNumber(phoneNumber)) {
-
+							
+							// check authen message
 							if (informationPackage.getCmdCode() == Constant.AUTHEN) {
 
 								if (informationPackage.gettLVMap().get(Constant.KEY).getValue().equals("topica")) {
@@ -144,7 +145,7 @@ public class Server {
 
 					System.out.println(informationPackage.toString());
 
-					// check client connect to server then end loop
+					// check if client close connect to server then end loop
 				} catch (EOFException e) {
 					connected = false;
 					System.out.println(e);
